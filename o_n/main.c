@@ -1,0 +1,16 @@
+#include <stdio.h>
+void
+print_numbers (unsigned int number)
+{
+  for (int i = 0; i < number; i++)
+    {
+      printf ("The number: %d\n", i);
+	  printf ("The second number: %d\n", i + 1);
+    }
+}
+
+int
+main ()
+{
+  print_numbers (100);
+}

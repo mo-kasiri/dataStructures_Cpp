@@ -1,0 +1,38 @@
+#include <stdio.h>
+//#include <stdbool.h>
+
+int
+target_function (int target)
+{
+  int array[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+  int low = 0;
+  int high = 9;
+  float counter = 0;
+  while (low <= high)
+    {
+      counter++;
+      int mid = low + (high - low) / 2;	// Prevents integer overflow
+      if (array[mid] == target)
+	{
+	  return counter;
+	}
+      else if (array[mid] < target)
+	{
+	  low = mid + 1;
+	}
+      else
+	{
+	  high = mid - 1;
+	}
+    }
+  return counter;
+}
+
+
+int
+main ()
+{
+  int counter = target_function (9);
+  printf ("The code ran for %d times\n", counter);
+  return 0;
+}
