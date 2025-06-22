@@ -8,8 +8,8 @@ public:
    ~LinkedList ();
   // Member variables
 private:
-    Node * m_pHead;
-  Node *m_pTail;
+  Node * m_pHead;
+  Node * m_pTail;
   unsigned int m_uiLength;
 
 public:
@@ -21,7 +21,6 @@ public:
   bool set (unsigned int index, const int value);
   bool insert (unsigned int index, const int value);
   bool remove (const unsigned int index);
-  void reverse();
 
   // Get list info
   void getHead ();

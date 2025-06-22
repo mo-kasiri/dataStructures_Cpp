@@ -194,20 +194,20 @@ LinkedList::remove (const unsigned int index)
   return true;
 }
 
-void
-LinkedList::reverse ()
+void LinkedList::reverse()
 {
-  if (m_uiLength <= 1) return;
+  m_pTail = get(0); // Set tail to the head
+  m_pHead = get(m_uiLength - 1); // Set head to the tail
+  
 
   for (unsigned int i = 1; i < m_uiLength; i++)
     {
-      get (m_uiLength - i)->m_pNext = get (m_uiLength - i - 1);
+      get(m_uiLength - i)->m_pNext = get(m_uiLength - i - 1);
     }
-  get (0)->m_pNext = nullptr;	// Set the new tail's next to nullptr
-  
-  m_pTail = get (0);		// Set tail to the head
-  m_pHead = get (m_uiLength - 1);	// Set head to the tail
+  get(0)->m_pNext = nullptr; // Set the new tail's next to nullptr
 }
+
+//bool LinkedList::insert (const int index, const int value);
 
 // Get list info
 void
