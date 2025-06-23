@@ -41,6 +41,7 @@ void Stack::push(const int value){
 }
 
 void Stack::pop(){
+    if (m_uiSize <= 0 ) return;
     Node* tempNode = m_pTop;
     m_pTop = m_pTop->m_pNext;
     delete tempNode;
